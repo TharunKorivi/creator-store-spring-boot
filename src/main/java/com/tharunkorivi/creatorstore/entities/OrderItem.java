@@ -1,5 +1,6 @@
 package com.tharunkorivi.creatorstore.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import lombok.*;
@@ -31,6 +32,7 @@ public class OrderItem {
     private Product product;
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "order_id",nullable = false)
     private Order order;
 

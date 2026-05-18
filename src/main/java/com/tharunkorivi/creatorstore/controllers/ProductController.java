@@ -15,7 +15,7 @@ import java.util.List;
 public class ProductController {
 
 
-    ProductService productService;
+    private final ProductService productService;
 
     @PostMapping
     public Product createProduct(@Valid @RequestBody Product product) {

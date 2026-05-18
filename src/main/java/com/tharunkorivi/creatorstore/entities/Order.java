@@ -1,6 +1,7 @@
 package com.tharunkorivi.creatorstore.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Email;
@@ -54,7 +55,7 @@ public class Order {
         this.createdAt = LocalDateTime.now();
     }
 
-
-    @OneToMany(mappedBy = "order")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "order",cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
 }
