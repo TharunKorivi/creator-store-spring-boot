@@ -43,6 +43,8 @@ public class Product {
     @Column(name = "stock_quantity",nullable = false)
     private Integer stockQuantity;
 
+    private String category;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
