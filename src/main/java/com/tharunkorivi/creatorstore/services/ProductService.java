@@ -14,7 +14,7 @@ import java.util.List;
 public class ProductService {
 
 
-    ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     public Product createProduct(Product product) {
         return productRepository.save(product);

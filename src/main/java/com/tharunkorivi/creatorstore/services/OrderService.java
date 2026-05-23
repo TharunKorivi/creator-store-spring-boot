@@ -21,8 +21,8 @@ import java.util.List;
 @AllArgsConstructor
 public class OrderService {
 
-    ProductRepository productRepository;
-    OrderRepository orderRepository;
+    private final ProductRepository productRepository;
+    private final OrderRepository orderRepository;
 
     @Transactional
     public Order createOrder(OrderRequest orderRequest)  {
