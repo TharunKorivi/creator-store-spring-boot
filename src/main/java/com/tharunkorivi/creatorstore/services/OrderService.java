@@ -7,8 +7,11 @@ import com.tharunkorivi.creatorstore.entities.OrderItem;
 import com.tharunkorivi.creatorstore.entities.Product;
 import com.tharunkorivi.creatorstore.repositories.OrderRepository;
 import com.tharunkorivi.creatorstore.repositories.ProductRepository;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -21,6 +24,7 @@ public class OrderService {
     ProductRepository productRepository;
     OrderRepository orderRepository;
 
+    @Transactional
     public Order createOrder(OrderRequest orderRequest)  {
         Order order = new Order();
         List<OrderItem>  orderItems = new ArrayList<>();
